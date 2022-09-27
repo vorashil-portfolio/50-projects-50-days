@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+
+* {
+    box-sizing: border-box; /* when you add a padding to an element it doesn't affect its width */
+}
+
+body {
+    background-color: #f6f7fb;
+    font-family: 'Muli', 'sans-serif';
+    display: flex; /* these lines make the code centered */
+    flex-direction: column; /* these lines make the code centered */
+    align-items: center; /* these lines make the code centered */
+    justify-content: center; /* these lines make the code centered */
+    height: 100vh; /* these lines make the code centered;  vh = viewport height; 100vh == 100% viewport's height */
+    overflow: hidden; /* these lines make the code centered */
+    margin: 0;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* when you have position relative in the parent element, then you can position its child elements using position:absolute */
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before {
+    content: ''; /* when you use :before or :after, you have to have content */
+    background-color: var(--line-border-empty);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%); /* we use this to move the blue line up a little so that its middle is on the center of 1 2 3 4, rather than the top. comment this out to see the e*/
+    z-index: -1; /* so it is behind the numbers */
+    transition: .4s ease;
+}
+
+.progress {
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 50%;
+    transform: translateY(-50%); /* we use this to move the blue line up a little so that its middle is on the center of 1 2 3 4, rather than the top. comment this out to see the e*/
+    z-index: -1; /* so it is behind the numbers */
+    transition: .4s ease;
+}
+
+.circle {
+    background-color: white;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition: .4s ease;
+}
+
+
+.circle.active {
+    border-color: var(--line-border-fill);
+}
+
+.btn {
+    background-color: var(--line-border-fill);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    transform: scale(0.95); /* gives the clicking effect to the button when it's clicked */
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}
