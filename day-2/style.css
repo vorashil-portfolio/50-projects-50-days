@@ -55,7 +55,7 @@ body {
     top: 50%;
     left: 0;
     height: 4px;
-    width: 50%;
+    width: 0%;
     transform: translateY(-50%); /* we use this to move the blue line up a little so that its middle is on the center of 1 2 3 4, rather than the top. comment this out to see the e*/
     z-index: -1; /* so it is behind the numbers */
     transition: .4s ease;
