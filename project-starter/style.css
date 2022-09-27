@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box; /* when you add a padding to an element it doesn't affect its width */
+}
+
+body {
+    font-family: 'Roboto', 'sans-serif';
+    display: flex; /* these lines make the code centered */
+    flex-direction: column; /* these lines make the code centered */
+    align-items: center; /* these lines make the code centered */
+    justify-content: center; /* these lines make the code centered */
+    height: 100vh; /* these lines make the code centered;  vh = viewport height; 100vh == 100% viewport's height */
+    overflow: hidden; /* these lines make the code centered */
+    margin: 0;
+}
